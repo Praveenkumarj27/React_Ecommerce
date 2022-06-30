@@ -7,7 +7,8 @@ import { useState } from "react";
 function App() {
 
   
-  const[products,setProduct] = useState([
+  // const[products,setProduct] = useState([
+    let products=[
     {
       id:1,
       title: "Apple iPhone 13 Pro Max (256 GB) - Alpine Green",
@@ -50,7 +51,7 @@ function App() {
       price: 12000,
       img: "https://m.media-amazon.com/images/I/81Ke5qtC6oL._SL1500_.jpg",
     },
-  ]);
+  ];
   
   const[cartItem,setCartItem]=useState([])
   const[total,setTotal]=useState(0)
@@ -64,19 +65,21 @@ function App() {
 
 
   let handleRemoveCart = (id) => {
-    const cartList = cartItem.findIndex((obj) => obj.id === id);
-    setTotal(total - cartItem[cartList].price);
-    cartItem.splice(cartList, 1);
+    const cartIndex = cartItem.findIndex((obj) => obj.id === id);
+    setTotal(total - cartItem[cartIndex].price);
+    cartItem.splice(cartIndex, 1);
     setCartItem([...cartItem]);
   };
   
   return (
     <div className="container">
+
       <div className="row">
         <div className="col-lg-12">
           <h4>Products</h4>
         </div>
       </div>
+
       <div className="row">
         <div className="col-lg-8">
           <div className="row">
@@ -90,6 +93,7 @@ function App() {
           <div className="col-lg-12">
           <h4 className='cart'>Cart</h4>
         </div>
+
         <ol className="list-group list-group-numbered">
          { cartItem.map((item)=>{
           return <CartItem data={item} handleRemoveCart={handleRemoveCart}/>

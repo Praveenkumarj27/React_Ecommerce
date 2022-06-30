@@ -1,5 +1,5 @@
 function Card(props) {
-    return <div className='col-lg-4'><div className='col-'>
+    return <div className='col-lg-4'>
         <div class="card" style={{width:"18rem"}}>
     <img src={props.data.img}class="card-img-top" alt="..."/>
     {/* <img src={`https://picsum.photos/200/150?random=${Math.floor(Math.random()*100)}`} class="card-img-top" alt="..."/> */}
@@ -11,7 +11,6 @@ function Card(props) {
       <button disabled={props.cartItem.some(obj=>obj.id===props.data.id)} onClick={()=> props.handleaddTocart(props.data.id) } href="#" class="btn btn-primary">Add to Cart</button>
     </div>
   </div>
-    </div>
     </div>
 }
 
