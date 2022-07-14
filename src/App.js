@@ -91,7 +91,7 @@ function App() {
         <div className="col-lg-4">
           <div className="row">
           <div className="col-lg-12">
-          <h4 className='cart'>Cart</h4>
+          <h5 className='cart'>Cart</h5>
         </div>
 
         <ol className="list-group list-group-numbered">
