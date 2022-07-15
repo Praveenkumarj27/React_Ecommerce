@@ -73,35 +73,40 @@ function App() {
   
   return (
     <div className="container">
-
-      <div className="row">
-        <div className="col-lg-12">
-          <h4>Products</h4>
-        </div>
-      </div>
-
       <div className="row">
         <div className="col-lg-8">
+          <h2>Products</h2>
+
           <div className="row">
             {products.map((item) => {
-              return <Card cartItem={cartItem} data={item} handleaddTocart={handleaddTocart}></Card>;
+              return (
+                <Card
+                  cartItem={cartItem}
+                  data={item}
+                   handleaddTocart={handleaddTocart}
+                ></Card>
+              );
             })}
           </div>
         </div>
-        <div className="col-lg-4">
-          <div className="row">
-          <div className="col-lg-12">
-          <h5 className='cart'>Cart</h5>
-        </div>
 
-        <ol className="list-group list-group-numbered">
-         { cartItem.map((item)=>{
-          return <CartItem data={item} handleRemoveCart={handleRemoveCart}/>
-          })}
-           </ol>
-           <div className="col-lg-12">
-           <h2>Total:{total}</h2>
-           </div>
+        <div className="col-lg-4">
+          <h2>Cart</h2>
+
+          <div className="row">
+            <div className="col-lg-12">
+              <ol class="list-group list-group-numbered">
+                {cartItem.map((item) => {
+                  return (
+                    <CartItem
+                      data={item}
+                      handleRemoveCart={handleRemoveCart}
+                    ></CartItem>
+                  );
+                })}
+              </ol>
+              <h2>Total: {total}</h2>
+            </div>
           </div>
         </div>
       </div>
@@ -110,3 +115,4 @@ function App() {
 }
 
 export default App;
+
